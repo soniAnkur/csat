@@ -1,0 +1,26 @@
+<div class="alert alert-success"><h1>I am the header</h1></div>
+
+<div id="wrapper">
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+            <li>
+                <h2><div data-ng-bind="vm.getApplicationName() | uppercase"></div></h2>
+            </li>
+            <li>
+                <a ui:sref="app.sidebar">Dashboard</a>
+            </li>
+            <li>
+                <a ui:sref="app.content">Content</a>
+            </li>
+            <li>
+                <a href="#">Overview</a>
+            </li>
+            <li>
+                <a href="#">Events</a>
+            </li>
+        </ul>
+    </div>
+<div data-ui-view></div>
+
+
+</div>
