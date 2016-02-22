@@ -7,7 +7,6 @@ import SessionStorageService = require("session-storage/services/SessionStorageS
 
 export class SessionStorageModule {
     public static moduleName : string = "session-storage";
-    //private $window : angular.IWindowService;
 
     public static initialize() : void {
         angular.module(SessionStorageModule.moduleName, []);

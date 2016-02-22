@@ -1,6 +1,7 @@
 'use strict'
 
 import SessionStorageService = require('session-storage/services/SessionStorageService');
+
 export class SessionStorageProvider implements sessionStorage.ISessionStorageServiceProvider {
 
     public static ID = 'session_storage_provider';
@@ -22,6 +23,7 @@ export class SessionStorageProvider implements sessionStorage.ISessionStorageSer
         /*TODO implement factory method for storage type*/
 
         return undefined;
+
     }
 
 }
