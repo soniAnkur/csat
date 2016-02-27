@@ -1,0 +1,9 @@
+<!--
+<div>
+    <button uib-popover="{{users}}" popover-title="Users" type="button" class="btn btn-default">Dynamic Popover</button>
+</div>-->
+<button uib-popover-template="vm.popoverConfig.templateUrl" class="btn btn-primary" popover-trigger="vm.popoverConfig.trigger" type="button"
+        class="btn btn-primary" style="margin-left: 10px">Search User
+</button> <br/>
+
+<div ng-if="vm.selectedUser" class="alert alert-warning">You have selected <strong>{{vm.selectedUser.user}}</strong> from <strong>{{vm.selectedUser.institute.instt}}</strong></div>

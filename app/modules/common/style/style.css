@@ -126,5 +126,45 @@
     .top-header {
         z-index: 1000;
         background: #b0aac2;
-        }
+    }
+    .user-search-plugin .popover{
+        padding-bottom: 10px;
+    }
+
+    .user-search-plugin .label{
+        padding: 8px 0;
+        margin-bottom: 6px;
+    }
+    .user-search-plugin select{
+        padding: 3px 0;
+        margin-bottom: 6px;
+    }
+    .user-search-plugin .popover-inner {
+        width: 200px;
+        text-align: center;
+        -webkit-border-radius: 0px !important;
+        -moz-border-radius: 0px !important;
+        border-radius: 0px !important;
+
+    }
+    .user-search-plugin .popover-content .btn-primary{
+        border-radius: 3px;
+        padding: 2px 0;
+    }
+    .user-search-plugin .btn{
+        min-width:200px;
+    }
+    .user-search-plugin .popover.top > .arrow{
+        display: none;
+    }
+    /* .user-search-plugin .popover{
+         background: url(../images/trans-layer.png) repeat 0 0;
+     }
+     .user-search-plugin .popover-title{
+         background:none;
+         border-bottom: none;
+     }*/
+    .mt-5 {
+        margin-top: 5px;
+    }
 }

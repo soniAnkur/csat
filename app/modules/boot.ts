@@ -1,25 +1,32 @@
 /// <amd-dependency path="angular"/>
 /// <amd-dependency path="angular-ui-router"/>
 /// <amd-dependency path="restangular"/>
+/// <amd-dependency path="angular-bootstrap"/>
+/// <amd-dependency path="angular-bootstrap-tpls"/>
 
 "use-strict"
 import AppCtrl = require("common/ctrl/AppCtrl")
 import SessionStorageModule = require("session-storage/SessionStorageModule")
+import UserSearchModule = require("user-search/UserSearchModule")
 
 
 export class Application {
     public static applicationName : string = "app";
 
+    public static dependencies : Array<string> =
+                                               [
+                                                   "ui.router" ,
+                                                   "restangular" ,
+                                                   "ui.bootstrap" ,
+                                                   SessionStorageModule.SessionStorageModule.moduleName,
+                                                   UserSearchModule.UserSearchModule.moduleName
+                                               ];
+
     public bootstrap() : void {
 
         this.initModules();
 
-        angular.module(Application.applicationName ,
-            [
-                "ui.router" ,
-                "restangular" ,
-                SessionStorageModule.SessionStorageModule.moduleName
-            ]);
+        angular.module(Application.applicationName , Application.dependencies);
 
         angular.module(Application.applicationName).
             config(["$stateProvider" , "$urlRouterProvider" , "$locationProvider" ,
@@ -35,13 +42,15 @@ export class Application {
 
                         .state("app.sidebar" , {
                             url : "/sidebar" ,
-                            template : '<div class="alert alert-success"><h1>Hello this is the welcome page</h1></div>'
+                            template : '<div class="alert alert-success"><h1>check the session storage</h1></div>' +
+                             '<input type="button" value="test" ng-click="vm.saveData()">'
                         })
 
                         .state("app.content" , {
                             url : "/content" ,
-                            template : '<div class="alert alert-success"><h1>I am in content 2</h1></div>' +
-                                        '<input type="button" value="test" ng-click="vm.saveData()">'
+                            template : '<div class="alert alert-success"><h2>User Search</h2></div>' +
+                                '<user-search data-ng-model="test" class="user-search-plugin"></user-search>'
+
                         });
 
                     $urlRouterProvider.otherwise("/sidebar");
@@ -52,11 +61,14 @@ export class Application {
         angular.module(Application.applicationName).controller(AppCtrl.ID , AppCtrl);
         /*register controller*/
 
-        /*bootstarp the application*/
+        /*bootstrap the application*/
         angular.bootstrap(document , [Application.applicationName]);
     }
 
     private initModules() : void {
         SessionStorageModule.SessionStorageModule.initialize();
+        UserSearchModule.UserSearchModule.initialize();
     }
 }
+
+new Application().bootstrap();

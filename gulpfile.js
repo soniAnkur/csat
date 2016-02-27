@@ -20,12 +20,22 @@ gulp.task('copy', function () {
         });
 });
 
-gulp.task('default', ['typescript', 'copy'], function () {
-    console.log('good to go..CHEERS :)  !!');
+gulp.task('copy-css', function () {
+    console.log('copying the css files')
+    gulp.src(['app/**/*.css'])
+        .pipe(gulp.dest('build'))
+        .on('finish', function () {
+            console.log("finished copying the css files")
+        });
+});
+
+gulp.task('default', ['typescript', 'copy', 'copy-css'], function () {
+    console.log('!!!!!!!!! ...good to go..CHEERS... !!!!!!!!!!');
 });
 
 gulp.task('watch', function () {
-    gulp.watch('app/**/*.*', ['default']);
+    gulp.watch('app/**/*.*', ['default', 'copy-css']);
+    console.log('!!!!!!!!! ...good to go..CHEERS... !!!!!!!!!!');
 });
 
 

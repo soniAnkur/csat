@@ -17,6 +17,10 @@ class AppCtrl implements common.IApplicationCtrl {
         this.$scope.vm = this;
         this.$scope.applicationName = "Concepts"
         this.sessionStorageProvider = sessionStorageProvider;
+        this.$scope.alerts = [
+            { type: 'danger', msg: 'Oh snap! Change a few things up and try submitting again.' },
+            { type: 'success', msg: 'Well done! You successfully read this important alert message.' }
+        ];
     }
 
     public getApplicationName() : string {

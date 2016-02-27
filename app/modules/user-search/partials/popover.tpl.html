@@ -1,0 +1,21 @@
+<div>
+    <div>
+        <div class="label label-primary col-lg-12 mt-5">Select Institute</div>
+    </div>
+    <div>
+        <select ng-model="search.institute" ng-options="instt.instt for instt in users"
+                ng-change="vm.fetchUsersForInstt()" class="col-lg-12 mt-5"></select>
+    </div>
+
+    <div>
+        <div class="label label-primary col-lg-12 mt-5">Select User</div>
+    </div>
+    <div>
+        <select ng-model="search.user" ng-options="user for user in search.institute.users"  class="col-lg-12 mt-5"></select>
+    </div>
+    <div>
+        <button type="submit" ng-click="vm.onSelect(search)" class="btn-primary col-lg-12 mt-5">Post Data</button>
+    </div>
+</div>
+
+

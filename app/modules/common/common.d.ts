@@ -17,9 +17,14 @@ declare module common {
     interface IApplicationScope extends IBaseScope {
         vm : IApplicationCtrl;
         applicationName : string;
+        alerts : any;
     }
 
     interface ICommonDTO {
+
+    }
+
+    interface ICommonDirective extends ng.IDirective{
 
     }
 
