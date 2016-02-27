@@ -14,13 +14,13 @@ export class Application {
     public static applicationName : string = "app";
 
     public static dependencies : Array<string> =
-                                               [
-                                                   "ui.router" ,
-                                                   "restangular" ,
-                                                   "ui.bootstrap" ,
-                                                   SessionStorageModule.SessionStorageModule.moduleName,
-                                                   UserSearchModule.UserSearchModule.moduleName
-                                               ];
+                      [
+                          "ui.router" ,
+                          "restangular" ,
+                          "ui.bootstrap" ,
+                          SessionStorageModule.SessionStorageModule.moduleName ,
+                          UserSearchModule.UserSearchModule.moduleName
+                      ];
 
     public bootstrap() : void {
 
@@ -39,21 +39,31 @@ export class Application {
                             templateUrl : "modules/app.html" ,
                             controller : AppCtrl
                         })
+                        .state('content' , {
+                            url : '/content' ,
+                            parent : 'app' ,
+                            abstract : true ,
+                            templateUrl : 'modules/common/views/content.tpl.html' ,
 
-                        .state("app.sidebar" , {
-                            url : "/sidebar" ,
-                            template : '<div class="alert alert-success"><h1>check the session storage</h1></div>' +
-                             '<input type="button" value="test" ng-click="vm.saveData()">'
-                        })
-
-                        .state("app.content" , {
-                            url : "/content" ,
-                            template : '<div class="alert alert-success"><h2>User Search</h2></div>' +
-                                '<user-search data-ng-model="test" class="user-search-plugin"></user-search>'
-
+                        }).state('content.detail' , {
+                            url : '' ,
+                            views : {
+                                'testCase@content' : {
+                                    templateUrl : "modules/common/views/testCase.tpl.html"
+                                    //controller: 'Graph2Ctrl'
+                                } ,
+                                'testSuite@content' : {
+                                    templateUrl : "modules/common/views/testSuite.tpl.html"
+                                    //controller: 'Graph1Ctrl'
+                                } ,
+                                'tabs@content' : {
+                                    templateUrl : "modules/common/views/tabs.tpl.html"
+                                    //controller: 'ActionCtrl'
+                                }
+                            }
                         });
 
-                    $urlRouterProvider.otherwise("/sidebar");
+                    $urlRouterProvider.otherwise("/content");
 
                 }]);
 
