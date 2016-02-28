@@ -8,6 +8,7 @@
 import AppCtrl = require("common/ctrl/AppCtrl")
 import SessionStorageModule = require("session-storage/SessionStorageModule")
 import UserSearchModule = require("user-search/UserSearchModule")
+import DashboardModule = require("dashboard/DashBoardModule")
 
 
 export class Application {
@@ -19,7 +20,8 @@ export class Application {
                           "restangular" ,
                           "ui.bootstrap" ,
                           SessionStorageModule.SessionStorageModule.moduleName ,
-                          UserSearchModule.UserSearchModule.moduleName
+                          UserSearchModule.UserSearchModule.moduleName,
+                          DashboardModule.DashboardModule.moduleName
                       ];
 
     public bootstrap() : void {
@@ -78,6 +80,7 @@ export class Application {
     private initModules() : void {
         SessionStorageModule.SessionStorageModule.initialize();
         UserSearchModule.UserSearchModule.initialize();
+        DashboardModule.DashboardModule.initialize();
     }
 }
 
