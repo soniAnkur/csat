@@ -2,16 +2,29 @@
 
 'use strict'
 
+import TestSuiteService = require("dashboard/services/TestSuiteService");
+
 class TestSuiteOverviewController implements dashboard.ITestSuiteOverviewController {
 
     public static ID = 'testSuiteOverviewController';
 
     public static $inject :Array<string> =
                       [
-                          "$scope"
+                          "$scope",
+                          TestSuiteService.ID
                       ]
-    constructor(public $scope : dashboard.ITestSuiteOverviewScope) {
+    constructor(public $scope : dashboard.ITestSuiteOverviewScope, private TestSuiteService : dashboard.ITestSuiteService) {
         $scope.vm =this;
+        this.getAll();
+    }
+
+    getAll() : any {
+        return this.TestSuiteService.fetchJSON().then((testSuites : Array<dashboard.ITestSuiteDTO>) => {
+            console.log(testSuites);
+            console.log("TestSuiteOverviewController");
+
+            this.$scope.testSuites = testSuites;
+        })
     }
 }
 

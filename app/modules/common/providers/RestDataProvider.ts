@@ -1,6 +1,6 @@
 /// <reference path = "../common.d.ts" />
 
-class restDataProvider <T extends common.ICommonDTO> implements common.IDataProvider<T> {
+class RestDataProvider<T extends common.ICommonDTO> implements common.IDataProvider<T> {
 
     static $inject: Array<string> = [
         "Restangular"
@@ -31,3 +31,5 @@ class restDataProvider <T extends common.ICommonDTO> implements common.IDataProv
     }
 
 }
+
+//export = new RestDataProvider();

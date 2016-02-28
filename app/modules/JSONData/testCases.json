@@ -1,0 +1,20 @@
+[{
+  "testCase" : {
+    "id" : "id",
+    "name" : "testCase1",
+    "code" : "testCaseCode1",
+    "tags" : ["tag1", "tag2", "tag3"]
+  },
+  "testCase" : {
+    "id" : "id2",
+    "name" : "testCase2",
+    "code" : "testCaseCode2",
+    "tags" : ["tag1", "tag2", "tag3"]
+  },
+  "testCase" : {
+    "id" : "id3",
+    "name" : "testCase3",
+    "code" : "testCaseCode3",
+    "tags" : ["tag1", "tag2", "tag3"]
+  }
+}]

@@ -6,9 +6,13 @@
 
 "use-strict"
 import AppCtrl = require("common/ctrl/AppCtrl")
+//import RestangularProvider = require("common/providers/RestDataProvider")
 import SessionStorageModule = require("session-storage/SessionStorageModule")
 import UserSearchModule = require("user-search/UserSearchModule")
-import DashboardModule = require("dashboard/DashBoardModule")
+import DashboardModule = require("dashboard/DashboardModule")
+import DashBoardOverviewController = require("dashboard/controllers/DashboardOverviewController");
+import TestCaseOverviewController = require("dashboard/controllers/TestCaseOverviewController");
+import TestSuiteOverviewController = require("dashboard/controllers/TestSuiteOverviewController");
 
 
 export class Application {
@@ -41,31 +45,32 @@ export class Application {
                             templateUrl : "modules/app.html" ,
                             controller : AppCtrl
                         })
-                        .state('content' , {
-                            url : '/content' ,
+                        .state('dashboard' , {
+                            url : '/dashboard' ,
                             parent : 'app' ,
                             abstract : true ,
                             templateUrl : 'modules/common/views/content.tpl.html' ,
+                            controller : DashBoardOverviewController
 
-                        }).state('content.detail' , {
+                        }).state('dashboard.detail' , {
                             url : '' ,
                             views : {
-                                'testCase@content' : {
-                                    templateUrl : "modules/dashboard/partials/testCase.tpl.html"
-                                    //controller: 'Graph2Ctrl'
+                                'testCase@dashboard' : {
+                                    templateUrl : "modules/dashboard/partials/testCase.tpl.html",
+                                    controller: TestCaseOverviewController
                                 } ,
-                                'testSuite@content' : {
-                                    templateUrl : "modules/dashboard/partials/testSuite.tpl.html"
-                                    //controller: 'Graph1Ctrl'
+                                'testSuite@dashboard' : {
+                                    templateUrl : "modules/dashboard/partials/testSuite.tpl.html",
+                                    controller: TestSuiteOverviewController
                                 } ,
-                                'tabs@content' : {
+                                'tabs@dashboard' : {
                                     templateUrl : "modules/dashboard/partials/tabs.tpl.html"
                                     //controller: 'ActionCtrl'
                                 }
                             }
                         });
 
-                    $urlRouterProvider.otherwise("/content");
+                    $urlRouterProvider.otherwise("/dashboard");
 
                 }]);
 
