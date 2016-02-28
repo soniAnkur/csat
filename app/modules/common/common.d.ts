@@ -24,6 +24,10 @@ declare module common {
 
     }
 
+    interface ICommonService {
+
+    }
+
     interface ICommonDirective extends ng.IDirective{
 
     }

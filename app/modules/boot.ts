@@ -49,15 +49,15 @@ export class Application {
                             url : '' ,
                             views : {
                                 'testCase@content' : {
-                                    templateUrl : "modules/common/views/testCase.tpl.html"
+                                    templateUrl : "modules/dashboard/partials/testCase.tpl.html"
                                     //controller: 'Graph2Ctrl'
                                 } ,
                                 'testSuite@content' : {
-                                    templateUrl : "modules/common/views/testSuite.tpl.html"
+                                    templateUrl : "modules/dashboard/partials/testSuite.tpl.html"
                                     //controller: 'Graph1Ctrl'
                                 } ,
                                 'tabs@content' : {
-                                    templateUrl : "modules/common/views/tabs.tpl.html"
+                                    templateUrl : "modules/dashboard/partials/tabs.tpl.html"
                                     //controller: 'ActionCtrl'
                                 }
                             }
