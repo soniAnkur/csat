@@ -1,15 +1,17 @@
 <div class="headline"><h2>Test Case Desktop</h2></div>
 <div class="business-object-repeat" data-ng-repeat="testCase in testCases">
     <div class="wrapper">
+        <div class="business-object-name"><strong>Name</strong> : {{testCase.name}}</div>
+<ul class="business-object-ul border-green">
 
-        <strong>Name</strong> : {{testCase.name}}
-        <strong>Code</strong> : {{testCase.code}}
-        <strong>Tegs</strong> : <span data-ng-repeat="tag in testCase.tags" class="label label-success">{{tag}}</span>
-
-
-        <div class="title">
-            {{testCase}}
-            <input type="button" value="Implement" class="btn btn-primary">
-        </div>
+    <li><strong>Code</strong> : {{testCase.code}}</li>
+    <li><strong>Description</strong> : my dummy description...</li>
+    <li><strong>Tags</strong> : <span data-ng-repeat="tag in testCase.tags" class="label label-success">{{tag}}</span></li>
+    <li class="title">
+       <span class="step-no">12</span>
+        <label>Test Steps</label>
+        <input type="button" value="Implement" class="btn btn-primary">
+    </li>
+</ul>
     </div>
 </div>

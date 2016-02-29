@@ -1,18 +1,17 @@
-<div class="headline"><h2>Test Suite Desktop</h2></div>
+<div class="headline"><h2>Test Case Desktop</h2></div>
 <div class="business-object-repeat" data-ng-repeat="testSuite in testSuites">
     <div class="wrapper">
+        <div class="business-object-name"><strong>Name</strong> : {{testSuite.name}}</div>
+        <ul class="business-object-ul border-green">
 
-        <strong>Name</strong> : {{testSuite.name}}
-        <strong>Code</strong> : {{testSuite.code}}
-        <strong>Tegs</strong> : <span data-ng-repeat="tag in testSuite.tags" class="label label-success">{{tag}}</span>
-
-
-        <div class="title">
-            <strong>Test Cases</strong> : Some other Data
-            <input type="button" value="Implement" class="btn btn-primary">
-        </div>
+            <li><strong>Code</strong> : {{testSuite.code}}</li>
+            <li><strong>Description</strong> : my dummy description...</li>
+            <li><strong>Tags</strong> : <span data-ng-repeat="tag in testSuite.tags" class="label label-success">{{tag}}</span></li>
+            <li class="title">
+                <span class="step-no">{{testSuite.tags.length}}</span>
+                <label>Test cases</label>
+                <input type="button" value="Implement" class="btn btn-primary">
+            </li>
+        </ul>
     </div>
 </div>
-
-
-{{testSuites}}
