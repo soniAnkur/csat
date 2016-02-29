@@ -9,10 +9,10 @@ declare module userSearch {
     interface IUserSearchDirectiveScope extends common.IBaseScope {
         vm : IUserSearchDirectiveController ;
         users : IUserDto;
+        popoverConfig: userSearch.IPopoverConfig;
     }
 
     interface IUserSearchDirectiveController extends common.IBaseCtrl {
-
         selectedUser : userSearch.IUserDto;
         fetchUsers() : void;
         onSelect(user : userSearch.IUserDto) : void;

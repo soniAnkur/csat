@@ -20,8 +20,8 @@ class UserSearchDirectiveController implements userSearch.IUserSearchDirectiveCo
                       ];
 
     constructor(public $scope : userSearch.IUserSearchDirectiveScope , private userSearchService : userSearch.IUserSearchDirectiveService) {
-        $scope.vm = this;
-        this.popoverConfig = new UserSearch.PopoverConfig(UserSearchDirectiveController.POPOVER_TEMPLATE_URL ,
+        this.$scope.vm = this;
+        this.$scope.popoverConfig = new UserSearch.PopoverConfig(UserSearchDirectiveController.POPOVER_TEMPLATE_URL ,
                                                             "Search - Users" ,
                                                             "outsideClick" ,
                                                             undefined);
