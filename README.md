@@ -3,17 +3,17 @@ Basic setup of typescript application in master branch, along with typings
 
 #Steps to run application
 
-#. npm install
+ npm install
 
-#. bower install
+ bower install
 
-#. gulp default
+ gulp default
 
-#. gulp watch
+ gulp watch
 
-#. install http server with command
-npm install -g http-server
+ install http server with command
+ npm install -g http-server
 
-run http-server with command http-server
+ run http-server with command http-server
 
 
