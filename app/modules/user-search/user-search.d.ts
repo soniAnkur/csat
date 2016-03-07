@@ -13,9 +13,9 @@ declare module userSearch {
 
     interface IUserSearchDirectiveController extends common.IBaseCtrl {
 
-        selectedUser : userSearch.IUserDto;
+        selectedUser : IUserDto;
         fetchUsers() : void;
-        onSelect(user : userSearch.IUserDto) : void;
+        onSelect(user : IUserDto) : void;
     }
 
     interface IUserDto extends common.ICommonDTO {
